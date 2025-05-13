@@ -29,6 +29,7 @@ function App() {
   const [searchCourse, setSearchCourse] = useState('')
   
   const addCourseToCartFunction = (GFGCourse) => {
+    console.log("add called!")
     const alreadyCourses = cartCourses.find(item => item.product.id === GFGCourse.id) // check to see if course already exists in cart
     if (alreadyCourses) { // update item quantity
       const latestCartUpdate = cartCourses.map(item => item.product.id === GFGCourse.id ? {...item, quantity: item.quantity + 1} : item)
@@ -49,7 +50,7 @@ function App() {
     setSearchCourse(event.target.value)
   }
 
-  const filterCourseFunction = courseSearchUserFunction.filter(course => course.name.toLowerCase().includes(searchCourse.toLowerCase()))
+  const filterCourseFunction = courses.filter(course => course.name.toLowerCase().includes(searchCourse.toLowerCase()))
   return (
   <div className="App">
     <SearchComponent searchCourse={searchCourse} courseSearchUserFunction={courseSearchUserFunction} />
