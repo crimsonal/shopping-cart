@@ -9,7 +9,9 @@ function ShowCourseComponent({courses, filterCourseFunction, addCourseToCartFunc
                         Sorry Geek, No matching Product found
                     </p>
                 ) : (
+    
                     filterCourseFunction.map((product) => (
+                        
                         <div className="product" key={product.id}>
                            <img src={product.img} alt={product.name} />
                            <h2>{product.name}</h2>

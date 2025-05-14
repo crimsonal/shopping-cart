@@ -29,11 +29,12 @@ function App() {
   const [searchCourse, setSearchCourse] = useState('')
   
   const addCourseToCartFunction = (GFGCourse) => {
-    console.log("add called!")
     const alreadyCourses = cartCourses.find(item => item.product.id === GFGCourse.id) // check to see if course already exists in cart
     if (alreadyCourses) { // update item quantity
       const latestCartUpdate = cartCourses.map(item => item.product.id === GFGCourse.id ? {...item, quantity: item.quantity + 1} : item)
       setCartCourses(latestCartUpdate)
+    } else {
+      setCartCourses([...cartCourses, {product: GFGCourse, quantity: 1}])
     }
   }
 

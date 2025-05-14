@@ -19,7 +19,7 @@ function UserCartComponent({cartCourses, deleteCourseFromCartFunction, totalAmou
                                     </div>
                                     <div className="item-details">
                                         <h3>{item.product.name}</h3>
-                                        <p>Price: ₹{item.produce.price}</p>
+                                        <p>Price: ₹{item.product.price}</p>
                                     </div>
                                 </div>
                                 <div className="item-actions">
