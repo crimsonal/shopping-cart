@@ -13,7 +13,7 @@ function ShowCourseComponent({courses, filterCourseFunction, addCourseToCartFunc
                     filterCourseFunction.map((product) => (
                         
                         <div className="product" key={product.id}>
-                           <img src={product.img} alt={product.name} />
+                           <img src={product.image} alt={product.name} />
                            <h2>{product.name}</h2>
                            <p>Price: ₹{product.price}</p>
                            <button className="add-to-cart-button"
